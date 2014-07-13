@@ -1,9 +1,9 @@
 # Project #3
 
 ## To Do
+* database reading
 * Random user generator
 * fix header spacing on individual pages
-
 
 
 ## Live URL
