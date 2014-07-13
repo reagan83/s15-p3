@@ -11,7 +11,17 @@
 |
 */
 
+Route::get('my/page', function() {
+    return "Hello world!";
+});
+
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('index');
+});
+
+Route::get('/books/{genre?}', function($genre = null)
+{
+    if ($genre == null) return "books index";
+    return "Books in the {$genre} category.";
 });
