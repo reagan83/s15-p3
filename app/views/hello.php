@@ -94,30 +94,14 @@ echo implode('<p>', $paragraphs);
 
                     <div class="form-group">
                         <label for="num_words">How many words in password?</label>
-                        <input type="text" class="form-control" id="num_words" name="num_words" value="<?php echo $password_num_words; ?>">
+                        <input type="text" class="form-control" id="num_words" name="num_words" value="">
                     </div>
-                    <div class="checkbox">
-                        <label>
-                          <input type="checkbox" name="include_numbers" <?php echo $password_include_numbers == "on" ? "checked" : ""; ?> > Include numbers?
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                          <input type="checkbox" name="include_specialchars" <?php echo $password_include_specialchars == "on" ? "checked" : ""; ?> > Include special characters?
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                          <input type="checkbox" name="include_uppercase" <?php echo $password_include_uppercase == "on" ? "checked" : ""; ?> > Upper case first letter of password?
-                        </label>
-                    </div>
-
                     <button type="submit" class="btn btn-success">Generate Password!</button>
                 </form>
                 <br>
 
                 <a href="http://xkcd.com/936/">xkcd password strength</a><br>
-                <img src="http://imgs.xkcd.com/comics/password_strength.png" style="width: 100%;" alt="xkcd style passwords">
+                <img src="http://imgs.xkcd.com/comics/password_strength.png" style="width: 50%;" alt="xkcd style passwords">
             </div>
             </div>
 

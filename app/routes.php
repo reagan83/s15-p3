@@ -17,7 +17,7 @@ Route::get('my/page', function() {
 
 Route::get('/', function()
 {
-	return View::make('index');
+	return View::make('hello');
 });
 
 Route::get('/books/{genre?}', function($genre = null)
