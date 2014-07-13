@@ -1,4 +1,21 @@
 <?php
+use Badcow\LoremIpsum\Generator;
+
+// default paragraphs amount
+$paragraphs = 5;
+
+$form_submitted = false;
+
+// form validation
+if (!empty($_GET)) {
+    $form_submitted = true;
+
+    // if paragraphs is a number
+    if (is_numeric($_GET['paragraphs'])) {
+        $paragraphs = $_GET['paragraphs'];
+    }
+}
+
 ?>
 
 <!doctype html>
@@ -57,7 +74,9 @@
                     <div class="inner">
                         <h4 class="masthead-brand">Reagan Williams</h4>
                         <ul class="nav masthead-nav">
-                            <li class="active"><a href="#">Home</a></li>
+                            <li class=""><a href="/">Home</a></li>
+                            <li class="active"><a href="/loremipsum">Lorem Ipsum</a></li>
+                            <li class=""><a href="/useripsum">Random Users!</a></li>
                         </ul>
                     </div>
                 </div>
@@ -65,7 +84,9 @@
                 <div class="inner cover">
                     <div class="hero-avatar">
                         <span class="avatar--large">
+                        <a href="/" alt="home">
                             <img src="/images/reagan.williams.jpg" class="avatar-image avatar-image--large imagePicker-target" title="Reagan Williams" alt="Reagan Williams">
+                        </a>
                         </span>
                     </div>
                     <h1 class="cover-heading">P3: Laravel App</h1>
@@ -82,28 +103,25 @@
                 <form method="get" name="pwoptions" role="form">
 
                     <div class="form-group">
-                        <label for="num_words">How many paragraphs do you want?</label>
-                        <input type="text" class="form-control" id="num_words" name="num_words" value="<?php echo $password_num_paragraph; ?>">
+                        <label for="paragraphs">How many paragraphs do you want?</label>
+                        <input type="text" class="form-control" id="paragraphs" name="paragraphs" value="<?php echo $paragraphs; ?>">
                     </div>
-                    <div class="checkbox">
-                        <label>
-                          <input type="checkbox" name="include_numbers" <?php echo $password_include_numbers == "on" ? "checked" : ""; ?> > Include numbers?
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                          <input type="checkbox" name="include_specialchars" <?php echo $password_include_specialchars == "on" ? "checked" : ""; ?> > Include special characters?
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                          <input type="checkbox" name="include_uppercase" <?php echo $password_include_uppercase == "on" ? "checked" : ""; ?> > Upper case first letter of password?
-                        </label>
-                    </div>
-
-                    <button type="submit" class="btn btn-success">Generate Words!</button>
+                    <button type="submit" class="btn btn-success">Generate</button>
                 </form>
                 <br>
+
+<?php
+
+if ($form_submitted == true) {
+    $generator = new Badcow\LoremIpsum\Generator();
+
+    // generate lorem ipsum based on user input
+    $paragraphs = $generator->getParagraphs($paragraphs);
+    echo implode('<p>', $paragraphs);
+}
+
+?>
+
             </div>
             </div>
 

@@ -1,4 +1,6 @@
 <?php
+
+
 ?>
 
 <!doctype html>
@@ -57,7 +59,9 @@
                     <div class="inner">
                         <h4 class="masthead-brand">Reagan Williams</h4>
                         <ul class="nav masthead-nav">
-                            <li class="active"><a href="#">Home</a></li>
+                            <li class="active"><a href="/">Home</a></li>
+                            <li class=""><a href="/loremipsum">Lorem Ipsum</a></li>
+                            <li class=""><a href="/useripsum">Random Users!</a></li>
                         </ul>
                     </div>
                 </div>
@@ -78,7 +82,7 @@
             <div class="col-md-3" style="float: none; margin: 0 auto;" role="main">
 
                 <h3>Lorem Ipsum Generator</h3>
-                <p>In publishing and graphic design, lorem ipsum is a placeholder text commonly used to demonstrate the graphic elements of a document or visual presentation. By replacing the distraction of meaningful content with filler text of scrambled Latin it allows viewers to focus on graphical elements such as font, typography, and layout.</p>
+                <p>Generate random text to help you simulate a layout.</p>
                 <a href="/loremipsum" class="btn btn-success">Lorem Ipsum Service</a>
                 <br><br>
 

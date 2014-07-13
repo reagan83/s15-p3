@@ -1,5 +1,11 @@
 # Project #3
 
+## To Do
+* Random user generator
+* fix header spacing on individual pages
+
+
+
 ## Live URL
 <http://p3.reaganwilliams.net>
 
@@ -16,6 +22,4 @@ This is project #3 for the DWA15 course at Harvard Summer School. This service i
 
 ## Plugins, libraries, packages, or outside code
 * Bootstrap (incl template inspired by Bootstrap's creator @mdo)
-
-
 ***** OTHERS??
