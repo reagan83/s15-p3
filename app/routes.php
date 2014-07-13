@@ -20,6 +20,18 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
+Route::get('/loremipsum', function()
+{
+    return View::make('loremipsum');
+});
+
+Route::get('/useripsum', function()
+{
+    return View::make('useripsum');
+});
+
+
+
 Route::get('/books/{genre?}', function($genre = null)
 {
     if ($genre == null) return "books index";

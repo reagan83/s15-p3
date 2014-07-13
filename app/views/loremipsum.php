@@ -4,37 +4,37 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Developer's Best Friend</title>
-	<style>
-		@import url(//fonts.googleapis.com/css?family=Lato:700);
+    <meta charset="UTF-8">
+    <title>Lorem Ipsum: Developer's Best Friend</title>
+    <style>
+        @import url(//fonts.googleapis.com/css?family=Lato:700);
 
-		body {
-			margin:0;
-			font-family:'Lato', sans-serif;
-			text-align:center;
-			color: #999;
-		}
+        body {
+            margin:0;
+            font-family:'Lato', sans-serif;
+            text-align:center;
+            color: #999;
+        }
 
-		.welcome {
-			width: 300px;
-			height: 200px;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			margin-left: -150px;
-			margin-top: -100px;
-		}
+        .welcome {
+            width: 300px;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -150px;
+            margin-top: -100px;
+        }
 
-		a, a:visited {
-			text-decoration:none;
-		}
+        a, a:visited {
+            text-decoration:none;
+        }
 
-		h1 {
-			font-size: 32px;
-			margin: 16px 0 0 0;
-		}
-	</style>
+        h1 {
+            font-size: 32px;
+            margin: 16px 0 0 0;
+        }
+    </style>
 
 
 <head>
@@ -78,14 +78,32 @@
             <div class="col-md-3" style="float: none; margin: 0 auto;" role="main">
 
                 <h3>Lorem Ipsum Generator</h3>
-                <p>In publishing and graphic design, lorem ipsum is a placeholder text commonly used to demonstrate the graphic elements of a document or visual presentation. By replacing the distraction of meaningful content with filler text of scrambled Latin it allows viewers to focus on graphical elements such as font, typography, and layout.</p>
-                <a href="/loremipsum" class="btn btn-success">Lorem Ipsum Service</a>
-                <br><br>
 
-                <p>Create random user data for your applications. Like Lorem Ipsum, but for people.</p>
-                <a href="/useripsum" class="btn btn-success">Random User Service</a>
+                <form method="get" name="pwoptions" role="form">
+
+                    <div class="form-group">
+                        <label for="num_words">How many paragraphs do you want?</label>
+                        <input type="text" class="form-control" id="num_words" name="num_words" value="<?php echo $password_num_paragraph; ?>">
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                          <input type="checkbox" name="include_numbers" <?php echo $password_include_numbers == "on" ? "checked" : ""; ?> > Include numbers?
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                          <input type="checkbox" name="include_specialchars" <?php echo $password_include_specialchars == "on" ? "checked" : ""; ?> > Include special characters?
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                          <input type="checkbox" name="include_uppercase" <?php echo $password_include_uppercase == "on" ? "checked" : ""; ?> > Upper case first letter of password?
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Generate Words!</button>
+                </form>
                 <br>
-
             </div>
             </div>
 
