@@ -22,7 +22,7 @@ if (!empty($_GET)) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lorem Ipsum: Developer's Best Friend</title>
+    <title>User Ipsum: Developer's Best Friend</title>
     <style>
         @import url(//fonts.googleapis.com/css?family=Lato:700);
 

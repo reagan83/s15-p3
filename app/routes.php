@@ -20,9 +20,10 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::get('/loremipsum', function()
+Route::get('/loremipsum/{paragraphs?}', function($paras = 0)
 {
-    return View::make('loremipsum');
+    $data["paras"] = $paras;
+    return View::make('loremipsum', $data);
 });
 
 Route::get('/useripsum', function()

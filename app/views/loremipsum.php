@@ -6,9 +6,18 @@ $paragraphs = 5;
 
 $form_submitted = false;
 
-// form validation
+echo "paras: " . $paras . "<br>";
+
+// route specifications (easy)
+if (!empty($paras))
+{
+    $form_submitted = 1;
+    $paragraphs = $paras;
+}
+
+// form validation (harder part of assignment)
 if (!empty($_GET)) {
-    $form_submitted = true;
+    $form_submitted = 1;
 
     // if paragraphs is a number
     if (is_numeric($_GET['paragraphs'])) {
