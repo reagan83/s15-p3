@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('my/page', function() {
-    return "Hello world!";
-});
-
 Route::get('/', function()
 {
 	return View::make('hello');
@@ -24,17 +20,10 @@ Route::get('/loremipsum/{paragraphs?}', function($paras = 0)
 {
     $data["paras"] = $paras;
     return View::make('loremipsum', $data);
-});
+})->where('paragraphs', '[0-9]+');
 
-Route::get('/useripsum', function()
+Route::get('/useripsum/{count?}', function($count = 0)
 {
-    return View::make('useripsum');
-});
-
-
-
-Route::get('/books/{genre?}', function($genre = null)
-{
-    if ($genre == null) return "books index";
-    return "Books in the {$genre} category.";
-});
+    $data["usercount"] = $count;
+    return View::make('useripsum', $data);
+})->where('count', '[0-9]+');

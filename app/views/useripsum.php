@@ -1,18 +1,27 @@
 <?php
-use Badcow\LoremIpsum\Generator;
+//use Badcow\LoremIpsum\Generator;
 
-// default paragraphs amount
-$paragraphs = 5;
+// require the Faker autoloader
+use Faker\Factory;
+// alternatively, use another PSR-0 compliant autoloader (like the Symfony2 ClassLoader for instance)
 
+$users_to_gen = 0;
 $form_submitted = false;
 
-// form validation
-if (!empty($_GET)) {
-    $form_submitted = true;
+// route specifications (easy)
+if (!empty($usercount))
+{
+    $form_submitted = 1;
+    $users_to_gen = $usercount;
+}
 
-    // if paragraphs is a number
-    if (is_numeric($_GET['paragraphs'])) {
-        $paragraphs = $_GET['paragraphs'];
+// form validation (harder part of assignment)
+if (!empty($_GET)) {
+    $form_submitted = 1;
+
+    // if users_to_gen is a number
+    if (is_numeric($_GET['users_to_gen'])) {
+        $users_to_gen = $_GET['users_to_gen'];
     }
 }
 
@@ -98,13 +107,13 @@ if (!empty($_GET)) {
             <div class="row " style="margin-top: 25px;">
             <div class="col-md-3" style="float: none; margin: 0 auto;" role="main">
 
-                <h3>Lorem Ipsum Generator</h3>
+                <h3>User Generator</h3>
 
                 <form method="get" name="pwoptions" role="form">
 
                     <div class="form-group">
-                        <label for="paragraphs">How many paragraphs do you want?</label>
-                        <input type="text" class="form-control" id="paragraphs" name="paragraphs" value="<?php echo $paragraphs; ?>">
+                        <label for="users_to_gen">How many users do you want?</label>
+                        <input type="text" class="form-control" id="users_to_gen" name="users_to_gen" value="<?php echo $users_to_gen; ?>">
                     </div>
                     <button type="submit" class="btn btn-success">Generate</button>
                 </form>
@@ -115,9 +124,18 @@ if (!empty($_GET)) {
 if ($form_submitted == true) {
     $generator = new Badcow\LoremIpsum\Generator();
 
-    // generate lorem ipsum based on user input
-    $paragraphs = $generator->getParagraphs($paragraphs);
-    echo implode('<p>', $paragraphs);
+    while ($users_to_gen > 0) {
+
+        $faker = Faker\Factory::create();
+        echo "<address>";
+        echo "<strong>" . $faker->name . "</strong><br>";
+        echo $faker->address . "<br>";
+        echo "Birthdate: " . $faker->dateTimeThisCentury->format('Y-m-d') . "<br>";
+        echo "</address>";
+
+        $users_to_gen--;
+
+    }
 }
 
 ?>

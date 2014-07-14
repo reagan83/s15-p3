@@ -6,8 +6,6 @@ $paragraphs = 5;
 
 $form_submitted = false;
 
-echo "paras: " . $paras . "<br>";
-
 // route specifications (easy)
 if (!empty($paras))
 {

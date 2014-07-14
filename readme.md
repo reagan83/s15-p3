@@ -10,7 +10,7 @@
 <http://p3.reaganwilliams.net>
 
 ## Description
-This is project #3 for the DWA15 course at Harvard Summer School. This service is written in the Laravel framework for PHP and provides a simple CRUD interface to generate random passwords and user database entries based on a user's criteria. The project is located on [GitHub](https://github.com/reagan83/s15-p3).
+This is project #3 for the DWA15 course at Harvard Summer School. This project is written in the Laravel framework for PHP and provides 2 services to generate lorem ipsum paragraphs and user database entries. The project is located on [GitHub](https://github.com/reagan83/s15-p3).
 
 ## Specific testing details & credentials
 ?????????
